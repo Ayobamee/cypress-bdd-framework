@@ -10,17 +10,17 @@ Given(
     switch (device) {
       case "desktop":
         cy.viewport("macbook-16");
-        cy.visit("/");
+        cy.visit("/login");
         loginPage.submitLogin(Username, Password);
         break;
       case "iPhone":
         cy.viewport("iphone-8");
-        cy.visit("/");
+        cy.visit("/login");
         loginPage.submitLogin(Username, Password);
         break;
       case "iPad":
         cy.viewport("ipad-2");
-        cy.visit("/");
+        cy.visit("/login");
         loginPage.submitLogin(Username, Password);
         break;
     }
@@ -30,13 +30,13 @@ Given(
 Given(
   "A user {string} is logged in to the aloSim app",
   (username, password, name) => {
-    cy.visit("/");
+    cy.visit("/login");
     loginPage.submitLogin(Username, Password);
   }
 );
 
 Given("A user is at the aloSim web app login page", () => {
-  cy.visit("/");
+  cy.visit("/login");
 });
 
 const errMessage =
