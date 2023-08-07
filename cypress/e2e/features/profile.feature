@@ -13,6 +13,6 @@ Feature: This feature ensures user's profile can be managed
         Then I can view redeem alocash voucher
 
     Scenario: Manage Billing - View Redeem aloCash on iOS
-        Given I am browser the alosim web app on "iOS"
+        Given I am browsing the alosim web app on "iOS"
 
 

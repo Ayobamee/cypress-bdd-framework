@@ -3,7 +3,7 @@ import { loginPage } from "@pages/LoginPage";
 
 const Username = "ayobami+1@affinityclick.com";
 const Password = "Hushed2023!";
-Given("I am browser the alosim web app on {string}", (device) => {
+Given("I am browsing the alosim web app on {string}", (device) => {
   switch (device) {
     case "web":
       cy.viewport(1440, 1245);
