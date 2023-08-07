@@ -23,6 +23,12 @@ class LoginPage {
     this.elements.passwordInput().type(password);
     this.elements.loginBtn().click();
   }
+
+  login(username, password) {
+    this.elements.usernameInput().click().type(username);
+    this.elements.passwordInput().type(password);
+    this.elements.loginBtn().click();
+  }
 }
 
 export const loginPage = new LoginPage();

@@ -7,18 +7,20 @@ Given("I am browsing the alosim web app on {string}", (device) => {
   switch (device) {
     case "iOS":
       cy.viewport("iphone-8");
-      cy.visit("/");
+      cy.visit("/login");
+      loginPage.login(Username, Password);
       break;
     case "tablet":
       cy.viewport("ipad-2");
-      cy.visit("/");
+      cy.visit("/login");
+      loginPage.login(Username, Password);
       break;
   }
 });
 
 Given(
   "A user {string} is logged in to the aloSim app",
-  (username, password, name, device) => {
+  (username, password, name) => {
     cy.visit("/login");
     loginPage.submitLogin(Username, Password);
   }
