@@ -3,33 +3,27 @@ import { loginPage } from "@pages/LoginPage";
 
 const Username = "ayobami+1@affinityclick.com";
 const Password = "Hushed2023!";
-
-Given(
-  "A user {string} is logged in to the aloSim app on {string} ",
-  (username, password, name, device) => {
-    switch (device) {
-      case "desktop":
-        cy.viewport("macbook-16");
-        cy.visit("/login");
-        loginPage.submitLogin(Username, Password);
-        break;
-      case "iPhone":
-        cy.viewport("iphone-8");
-        cy.visit("/login");
-        loginPage.submitLogin(Username, Password);
-        break;
-      case "iPad":
-        cy.viewport("ipad-2");
-        cy.visit("/login");
-        loginPage.submitLogin(Username, Password);
-        break;
-    }
+Given("I am browser the alosim web app on {string}", (device) => {
+  switch (device) {
+    case "web":
+      cy.viewport(1440, 1245);
+      cy.visit("/");
+      cy.viewport(1440, 1245);
+      break;
+    case "iOS":
+      cy.viewport("iphone-8");
+      cy.visit("/");
+      break;
+    case "tablet":
+      cy.viewport(768, 660);
+      cy.visit("/");
+      break;
   }
-);
+});
 
 Given(
   "A user {string} is logged in to the aloSim app",
-  (username, password, name) => {
+  (username, password, name, device) => {
     cy.visit("/login");
     loginPage.submitLogin(Username, Password);
   }

@@ -12,9 +12,7 @@ Feature: This feature ensures user's profile can be managed
         And I click the Manage billing module
         Then I can view redeem alocash voucher
 
-# Scenario: Add card to alosim Profile
-#     Given A user "Bill" is logged in to the aloSim app
-#     When I click the profile module
-#     And I click the add card label
+    Scenario: Manage Billing - View Redeem aloCash on iOS
+        Given I am browser the alosim web app on "iOS"
 
 
