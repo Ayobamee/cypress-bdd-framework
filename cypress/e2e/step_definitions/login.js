@@ -5,17 +5,12 @@ const Username = "ayobami+1@affinityclick.com";
 const Password = "Hushed2023!";
 Given("I am browsing the alosim web app on {string}", (device) => {
   switch (device) {
-    case "web":
-      cy.viewport(1440, 1245);
-      cy.visit("/");
-      cy.viewport(1440, 1245);
-      break;
     case "iOS":
       cy.viewport("iphone-8");
       cy.visit("/");
       break;
     case "tablet":
-      cy.viewport(768, 660);
+      cy.viewport("ipad-2");
       cy.visit("/");
       break;
   }
