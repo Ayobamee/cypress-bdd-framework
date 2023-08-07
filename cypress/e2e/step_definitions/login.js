@@ -1,30 +1,31 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { loginPage } from "@pages/LoginPage";
 
-const Username = "ayobami+1@affinityclick.com";
-const Password = "Hushed2023!";
 Given("I am browsing the alosim web app on {string}", (device) => {
-  switch (device) {
-    case "iOS":
-      cy.viewport("iphone-8");
-      cy.visit("/login");
-      loginPage.login(Username, Password);
-      break;
-    case "tablet":
-      cy.viewport("ipad-2");
-      cy.visit("/login");
-      loginPage.login(Username, Password);
-      break;
-  }
+  cy.fixture("testData").then((info) => {
+    const testDataInfo = info.userDetails;
+    switch (device) {
+      case "iOS":
+        cy.viewport("iphone-8");
+        cy.visit("/login");
+        loginPage.login(testDataInfo.username, testDataInfo.password);
+        break;
+      case "tablet":
+        cy.viewport("ipad-2");
+        cy.visit("/login");
+        loginPage.login(testDataInfo.username, testDataInfo.password);
+        break;
+    }
+  });
 });
 
-Given(
-  "A user {string} is logged in to the aloSim app",
-  (username, password, name) => {
+Given("A user {string} is logged in to the aloSim app", () => {
+  cy.fixture("testData").then((info) => {
+    const testDataInfo = info.userDetails;
     cy.visit("/login");
-    loginPage.submitLogin(Username, Password);
-  }
-);
+    loginPage.login(testDataInfo.existingUsername, testDataInfo.password);
+  });
+});
 
 Given("A user is at the aloSim web app login page", () => {
   cy.visit("/login");
