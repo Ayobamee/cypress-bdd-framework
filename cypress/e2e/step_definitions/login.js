@@ -7,13 +7,15 @@ Given("I am browsing the alosim web app on {string}", (device) => {
     switch (device) {
       case "iOS":
         cy.viewport("iphone-8");
+        cy.clearCookies();
         cy.visit("/login");
-        loginPage.login(testDataInfo.username, testDataInfo.password);
+        loginPage.login(testDataInfo.existingUsername, testDataInfo.password);
         break;
       case "tablet":
         cy.viewport("ipad-2");
+        cy.clearCookies();
         cy.visit("/login");
-        loginPage.login(testDataInfo.username, testDataInfo.password);
+        loginPage.login(testDataInfo.existingUsername, testDataInfo.password);
         break;
     }
   });
@@ -22,12 +24,14 @@ Given("I am browsing the alosim web app on {string}", (device) => {
 Given("A user {string} is logged in to the aloSim app", () => {
   cy.fixture("testData").then((info) => {
     const testDataInfo = info.userDetails;
+    cy.clearCookies();
     cy.visit("/login");
     loginPage.login(testDataInfo.existingUsername, testDataInfo.password);
   });
 });
 
 Given("A user is at the aloSim web app login page", () => {
+  cy.clearCookies();
   cy.visit("/login");
 });
 
