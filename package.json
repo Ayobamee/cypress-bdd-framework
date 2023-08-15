@@ -4,7 +4,7 @@
   "description": "This project is to test features on the aloSim web client.",
   "main": "index.js",
   "scripts": {
-    "test" : "npx cypress run --record --key 80a0e17e-3379-4812-bf1f-55e0805896ee",
+    "test": "npx cypress run --record --key 80a0e17e-3379-4812-bf1f-55e0805896ee",
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
     "cypress:execution-tags": "cypress run --env tags=@mobile",
@@ -14,7 +14,8 @@
     "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true"
   },
   "keywords": [
-    "cypress", "cucumber"
+    "cypress",
+    "cucumber"
   ],
   "author": "Ayobami Elutade",
   "license": "ISC",
@@ -23,8 +24,10 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
     "@shelex/cypress-allure-plugin": "^2.34.0",
     "cypress": "^12.5.1",
+    "cypress-mailosaur": "^2.13.0",
     "cypress-recurse": "^1.27.0",
     "esbuild": "^0.16.4",
+    "mailosaur": "^8.6.1",
     "multiple-cucumber-html-reporter": "^3.0.1"
   }
 }

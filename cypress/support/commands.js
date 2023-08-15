@@ -25,14 +25,4 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // Create a custom command
-Cypress.Commands.add(
-  "iframe",
-  { prevSubject: "element" },
-  ($iframe, callback = () => {}) => {
-    return new Cypress.Promise((resolve) => {
-      $iframe.on("load", () => {
-        resolve($iframe.contents().find("body"));
-      });
-    }).then(callback);
-  }
-);
+import "cypress-mailosaur";
