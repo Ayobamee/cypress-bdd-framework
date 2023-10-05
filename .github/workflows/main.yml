@@ -20,5 +20,4 @@ jobs:
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
-          start: npm start  # Command to start your application
-          browser: chrome
+          start: npx cypress open --config-file=cypress.config.js
