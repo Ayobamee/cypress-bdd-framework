@@ -20,4 +20,5 @@ jobs:
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
-          start: npx cypress open --config-file=cypress.config.js
+          start: npm start  # Command to start your application
+          wait-on: 'https://www.preprod.alosim.com/'  # URL to wait for before starting tests
