@@ -21,4 +21,4 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           start: npm start  # Command to start your application
-          wait-on: 'https://www.preprod.alosim.com/'  # URL to wait for before starting tests
+          wait-on: 'http://localhost:3000'  # URL to wait for before starting tests
