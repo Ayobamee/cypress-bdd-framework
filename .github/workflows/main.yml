@@ -20,4 +20,5 @@ jobs:
       - name: Run Cypress Tests
         uses: cypress-io/github-action@v2
         with:
+          start: npm start
           wait-on: "https://www.preprod.alosim.com/"
