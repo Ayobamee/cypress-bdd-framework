@@ -4,7 +4,7 @@
   "description": "This project is to test features on the aloSim web client.",
   "main": "index.js",
   "scripts": {
-    "start": "cypress run --config-file=cypress.config.js",
+    "start": "npx cypress run --config-file=cypress.config.js",
     "test": "npx cypress run --record --key 80a0e17e-3379-4812-bf1f-55e0805896ee",
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
