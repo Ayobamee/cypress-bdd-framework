@@ -30,4 +30,4 @@ jobs:  # Define the jobs to be run.
       uses: cypress-io/github-action@v2
       with:
         start: npm start  # Command to start the application.
- 
+        wait-on: 'http://localhost:3000'  # URL to wait for before starting tests.
