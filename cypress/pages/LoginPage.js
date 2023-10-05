@@ -29,6 +29,10 @@ class LoginPage {
     this.elements.passwordInput().type(password);
     this.elements.loginBtn().click();
   }
+
+  verifyLoginErrorMessage() {
+    this.elements.errorMessage().should("be.visible");
+  }
 }
 
 export const loginPage = new LoginPage();

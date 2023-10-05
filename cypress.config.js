@@ -21,19 +21,17 @@ async function setupNodeEvents(on, config) {
 }
 
 module.exports = defineConfig({
-  projectId: "bknoo8",
-  retries: {
-    runMode: 2,
-    openMode: 1,
-  },
-
   e2e: {
     setupNodeEvents,
     specPattern: "cypress/e2e/features/*.feature",
-    baseUrl: "https://www.preprod.alosim.com",
+    baseUrl: "https://www.preprod.alosim.com/",
     chromeWebSecurity: false,
     env: {
       allureReuseAfterSpec: true,
+    },
+    retries: {
+      runMode: 3,
+      openMode: 2,
     },
   },
 });
