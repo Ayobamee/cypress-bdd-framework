@@ -1,33 +1,6 @@
-name: Run Cypress Tests  # Name of the workflow to be displayed on GitHub.
-
-on:  # Define the events that trigger the workflow execution.
-  push:  # Execute the workflow on every push...
-    branches: [ main ]  # ...to the main branch.
-  pull_request:  # And on every pull request...
-    branches: [ main ]  # ...targeting the main branch.
-
-jobs:  # Define the jobs to be run.
-  test:  # Define a single job named "test".
-    runs-on: ubuntu-latest  # Specify the runner to use.
-
-    strategy:  # Define strategy for matrix build.
-      matrix: 
-        node-version: [14.x]  # Define the Node.js versions to test against.
-
-    steps:  # Define the steps of the "test" job.
-    - name: Checkout Code  # Step 1: Checkout the repository.
-      uses: actions/checkout@v2
-    
-    - name: Setup Node.js  # Step 2: Setup Node.js.
-      uses: actions/setup-node@v2
-      with:
-        node-version: ${{ matrix.node-version }}  # Use the version from the matrix.
-    
-    - name: Install Dependencies  # Step 3: Install npm dependencies.
-      run: npm ci
-    
-    - name: Run Cypress Tests  # Step 4: Run Cypress tests.
-      uses: cypress-io/github-action@v2
-      with:
-        start: npm start  # Command to start the application.
-        wait-on: 'http://localhost:3000'  # URL to wait for before starting tests.
+- name: Cypress run
+  uses: cypress-io/github-action@v6
+  with:
+    build: npm run build
+    start: npm start
+    browser: chrome
