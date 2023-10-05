@@ -20,6 +20,26 @@ Given("I am browsing the alosim web app on {string}", (device) => {
   });
 });
 
+Given(
+  "I am on the login screen of the alosim web app on {string}",
+  (device) => {
+    switch (device) {
+      case "iOS":
+        cy.viewport("iphone-8");
+        cy.clearCookies();
+        cy.visit("/login");
+
+        break;
+      case "tablet":
+        cy.viewport("ipad-2");
+        cy.clearCookies();
+        cy.visit("/login");
+
+        break;
+    }
+  }
+);
+
 Given("A user {string} is logged in to the aloSim app", () => {
   cy.fixture("testData").then((info) => {
     const testDataInfo = info.userDetails;
@@ -33,9 +53,6 @@ Given("A user is at the aloSim web app login page", () => {
   cy.clearCookies();
   cy.visit("/login");
 });
-
-const errMessage =
-  "Could not Log In with this username and password. Please check your entries and try again";
 
 When("A user enters their correct credentials", () => {
   cy.fixture("testData").then((info) => {
