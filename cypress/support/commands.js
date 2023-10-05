@@ -26,3 +26,5 @@
 
 // Create a custom command
 import "cypress-mailosaur";
+require('cypress-xpath')
+

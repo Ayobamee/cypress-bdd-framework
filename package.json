@@ -4,7 +4,7 @@
   "description": "This project is to test features on the aloSim web client.",
   "main": "index.js",
   "scripts": {
-    "start" : "npx cypress run",
+    "start": "npx cypress run",
     "test": "npx cypress run --record --key 80a0e17e-3379-4812-bf1f-55e0805896ee",
     "cypress:runner": "cypress open --e2e --browser chrome",
     "cypress:execution": "cypress run --spec cypress/e2e/features/*",
@@ -27,6 +27,7 @@
     "cypress": "^13.1.0",
     "cypress-mailosaur": "^2.13.0",
     "cypress-recurse": "^1.27.0",
+    "cypress-xpath": "^2.0.1",
     "esbuild": "^0.16.4",
     "mailosaur": "^8.6.1",
     "multiple-cucumber-html-reporter": "^3.0.1"

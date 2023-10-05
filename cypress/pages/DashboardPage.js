@@ -2,8 +2,9 @@ class DashboardPage {
   elements = {
     canadaBtn: () => cy.get("button").contains("h3", "Canada"),
     canadaPlan: () => cy.contains("p", "Valid for 7 days"),
-    buyBtn: () => cy.get("button").contains("Buy for $4.50"),
-    checkbox: () => cy.get(".sc-eZKLwX", { timeout: 15000 }),
+    buyBtn: () => cy.get("button").contains("Buy for $7.50"),
+    continueBtn: () => cy.xpath('//button[normalize-space()="Continue"]'),
+    checkbox: () => cy.get(".sc-dZpvmy", { timeout: 15000 }),
     checkoutPage: () => cy.get(".sc-TBWPX"),
     packageSearchBox: () => cy.get("input[placeholder='Search']"),
     outputOfSearchCanada: () => cy.contains("h3", "Canada"),
@@ -12,11 +13,14 @@ class DashboardPage {
   };
 
   selectpreferredEsimPkg() {
+    cy.wait(3000);
     this.elements.canadaBtn().click();
     this.elements.canadaPlan().click();
   }
 
   clickBuy() {
+    this.elements.buyBtn().click();
+    this.elements.continueBtn().click();
     this.elements.buyBtn().click();
   }
 
