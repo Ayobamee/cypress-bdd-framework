@@ -30,3 +30,13 @@ Feature: This feature ensures that the login functionality works appropriately
     Given I am on the login screen of the alosim web app on "tablet"
     When A user enters their incorrect credentials
     Then The appropriate error message is displayed
+
+  Scenario: Successful Login on a Samsung device
+    Given I am on the login screen of the alosim web app on "samsung"
+    When A user enters their correct credentials
+    Then The url will contain the esim subdirectory
+
+  Scenario: Failed Login on a Samsung device
+    Given I am on the login screen of the alosim web app on "samsung"
+    When A user enters their incorrect credentials
+    Then The appropriate error message is displayed

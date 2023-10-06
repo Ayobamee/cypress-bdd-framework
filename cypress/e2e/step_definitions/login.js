@@ -36,6 +36,13 @@ Given(
         cy.visit("/login");
 
         break;
+
+      case "samsung":
+        cy.viewport("samsung-s10");
+        cy.clearCookies();
+        cy.visit("/login");
+
+        break;
     }
   }
 );
