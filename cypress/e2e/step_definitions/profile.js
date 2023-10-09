@@ -5,6 +5,10 @@ When("I click the profile module", () => {
   profilePage.clickProfile();
 });
 
+When("I click the profile module on mobile", () => {
+  profilePage.clickProfileOnMobile();
+});
+
 When("I click the notifications module", () => {
   profilePage.clickNotifications();
 });
@@ -22,5 +26,5 @@ When("I click the Manage billing module", () => {
 });
 
 Then("I can view redeem alocash voucher", () => {
-  profilePage.viewRedeemAlocashVoucher();
+  profilePage.verifyRedeemAlocashVoucher();
 });

@@ -1,6 +1,8 @@
 class ProfilePage {
   elements = {
     profileModule: () => cy.contains("Profile"),
+    profileModuleMobile: () =>
+      cy.get("div[class='sc-hYQoXb fdPwZJ'] div:nth-child(3) a:nth-child(1)"),
     notificationsModule: () => cy.get("div").contains("Notifications"),
     marketingNotifications: () => cy.contains("Marketing Notifications"),
     packageExpiryNotifications: () =>
@@ -21,6 +23,10 @@ class ProfilePage {
 
   clickProfile() {
     this.elements.profileModule().click();
+  }
+
+  clickProfileOnMobile() {
+    this.elements.profileModuleMobile().click();
   }
 
   clickNotifications() {
@@ -53,7 +59,7 @@ class ProfilePage {
     this.elements.manageBillingModule().click();
   }
 
-  viewRedeemAlocashVoucher() {
+  verifyRedeemAlocashVoucher() {
     this.elements.addCardLabelAlocashVoucher().click();
     this.elements.redeemAlocashDiv().should("be.visible");
     this.elements.redeemBtn().should("be.disabled");
