@@ -1,11 +1,18 @@
 import { Given, When, Then } from "@badeball/cypress-cucumber-preprocessor";
 import { loginPage } from "@pages/LoginPage";
-Given("I am browsing the alosim web app on {string}", (device) => {
+Given("I am logged into the alosim web app on {string}", (device) => {
   cy.fixture("testData").then((info) => {
     const testDataInfo = info.userDetails;
     switch (device) {
       case "iOS":
         cy.viewport("iphone-8");
+        cy.clearCookies();
+        cy.visit("/login");
+        loginPage.login(testDataInfo.existingUsername, testDataInfo.password);
+        break;
+
+      case "samsung":
+        cy.viewport("samsung-s10");
         cy.clearCookies();
         cy.visit("/login");
         loginPage.login(testDataInfo.existingUsername, testDataInfo.password);
