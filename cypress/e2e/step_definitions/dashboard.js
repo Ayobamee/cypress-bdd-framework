@@ -25,3 +25,7 @@ When("I search for an eSim package from the region section", () => {
 Then("I can see the eSim package been searched for", () => {
   dashboardPage.searchedUnitedStatesIcon();
 });
+
+Then("I can see all countries with E-Sim packages", () => {
+  dashboardPage.viewCountries();
+});

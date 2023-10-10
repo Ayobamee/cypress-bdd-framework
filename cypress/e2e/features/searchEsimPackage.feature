@@ -37,3 +37,7 @@ Feature: This feature ensures that a user can search for an eSim
         When I search for an eSim package from the region section
         Then I can see the eSim package been searched for
 
+    Scenario: Search for ESim under regions on tablet
+        Given I am logged into the alosim web app on "tablet"
+        When I search for an eSim package from the region section
+        Then I can see the eSim package been searched for

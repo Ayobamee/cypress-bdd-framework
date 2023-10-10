@@ -10,6 +10,18 @@ class DashboardPage {
     outputOfSearchCanada: () => cy.contains("h3", "Canada"),
     regionBtn: () => cy.get("button").contains("Regions"),
     outputOfSearchUnitedStates: () => cy.contains("h3", "United States"),
+    austriaPopularBtn: () => cy.contains("button", "Austria"),
+    canadaPopularBtn: () => cy.contains("button", "Canada"),
+    fijiPopularBtn: () => cy.contains("button", "Fiji"),
+    indiaPopularBtn: () => cy.contains("button", "India"),
+    scrollBtnonPopularSegment: () =>
+      cy.xpath("//button[@class='sc-iqVWFU fzSIkb sc-kTLmzF etttbC']"),
+    japanPopularBtn: () => cy.contains("button", "Japan"),
+    kosovoPopularBtn: () => cy.contains("button", "Kosovo"),
+    mexicoPopularBtn: () => cy.contains("button", "Mexico"),
+    unitedArabEmiratesPopularBtn: () =>
+      cy.contains("button", "United Arab Emirate"),
+    unitedStatesPopularBtn: () => cy.contains("button", "United States"),
   };
 
   selectpreferredEsimPkg() {
@@ -48,6 +60,25 @@ class DashboardPage {
 
   searchedUnitedStatesIcon() {
     this.elements.outputOfSearchUnitedStates().should("be.visible");
+  }
+
+  viewCountries() {
+    this.elements.austriaPopularBtn().should("be.visible");
+    this.elements.canadaPopularBtn().should("be.visible");
+    this.elements.fijiPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.indiaPopularBtn().should("be.visible");
+    this.elements.japanPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.kosovoPopularBtn().should("be.visible");
+    for (let i = 0; i < 4; i++) {
+      this.elements.scrollBtnonPopularSegment().click();
+    }
+    this.elements.mexicoPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.unitedArabEmiratesPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.unitedStatesPopularBtn().should("be.visible");
   }
 }
 
