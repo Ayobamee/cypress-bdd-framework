@@ -1,6 +1,16 @@
 class DashboardPage {
   elements = {
+    austriaBtn: () => cy.get("button").contains("h3", "Austria"),
     canadaBtn: () => cy.get("button").contains("h3", "Canada"),
+    fijiBtn: () => cy.get("button").contains("h3", "Fiji"),
+    indiaBtn: () => cy.get("button").contains("h3", "India"),
+    japanBtn: () => cy.get("button").contains("h3", "Japan"),
+    kosovoBtn: () => cy.get("button").contains("h3", "Kosovo"),
+    mexicoBtn: () => cy.get("button").contains("h3", "Mexico"),
+    polandBtn: () => cy.get("button").contains("h3", "Poland"),
+    unitedArabEmirateBtn: () =>
+      cy.get("button").contains("h3", "United Arab Emirate"),
+    unitedStatesBtn: () => cy.get("button").contains("h3", "United States"),
     canadaPlan: () => cy.contains("p", "Valid for 7 days"),
     buyBtn: () => cy.get("button").contains("Buy for $7.50"),
     continueBtn: () => cy.xpath('//button[normalize-space()="Continue"]'),
@@ -79,6 +89,19 @@ class DashboardPage {
     this.elements.unitedArabEmiratesPopularBtn().should("be.visible");
     this.elements.scrollBtnonPopularSegment().click();
     this.elements.unitedStatesPopularBtn().should("be.visible");
+  }
+
+  viewCountriesBelowPopular() {
+    this.elements.austriaBtn().should("be.visible");
+    this.elements.canadaBtn().should("be.visible");
+    this.elements.fijiBtn().should("be.visible");
+    this.elements.indiaBtn().should("be.visible");
+    this.elements.japanBtn().scrollIntoView().should("be.visible");
+    this.elements.kosovoBtn().scrollIntoView().should("be.visible");
+    this.elements.mexicoBtn().scrollIntoView().should("be.visible");
+    this.elements.polandBtn().scrollIntoView().should("be.visible");
+    this.elements.unitedArabEmirateBtn().scrollIntoView().should("be.visible");
+    this.elements.unitedStatesBtn().scrollIntoView().should("be.visible");
   }
 }
 

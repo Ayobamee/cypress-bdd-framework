@@ -26,6 +26,10 @@ Then("I can see the eSim package been searched for", () => {
   dashboardPage.searchedUnitedStatesIcon();
 });
 
-Then("I can see all countries with E-Sim packages", () => {
+Then("I can see all popular countries with E-Sim packages", () => {
   dashboardPage.viewCountries();
+});
+
+Then("I can view all countries with E-Sim packages", () => {
+  dashboardPage.viewCountriesBelowPopular();
 });

@@ -3,5 +3,11 @@ Feature: This feature ensures that the store functionality works appropriately
 
   Scenario: Store - View Packages under Countries
     Given A user "Kerde" is logged in to the aloSim app
-    Then I can see all countries with E-Sim packages
+    Then I can see all popular countries with E-Sim packages
 
+
+
+
+  Scenario: Store - View All Packages under Countries
+    Given A user "Kerde" is logged in to the aloSim app
+    Then I can view all countries with E-Sim packages
