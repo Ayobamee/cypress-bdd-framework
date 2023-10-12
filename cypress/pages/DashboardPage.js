@@ -72,6 +72,7 @@ class DashboardPage {
     this.elements.outputOfSearchUnitedStates().should("be.visible");
   }
 
+  //view countries
   viewCountries() {
     this.elements.austriaPopularBtn().should("be.visible");
     this.elements.canadaPopularBtn().should("be.visible");
