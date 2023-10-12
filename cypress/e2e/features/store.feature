@@ -6,6 +6,13 @@ Feature: This feature ensures that the store functionality works appropriately
     Then I can see all popular countries with E-Sim packages
 
 
+  Scenario: Store - View Packages under Countries on iOS
+    Given I am logged into the alosim web app on "iOS"
+    Then I can see all popular countries with E-Sim packages on mobile
+
+  Scenario: Store - View Packages under Countries on Samsung
+    Given I am logged into the alosim web app on "samsung"
+    Then I can see all popular countries with E-Sim packages on mobile
 
 
   Scenario: Store - View All Packages under Countries

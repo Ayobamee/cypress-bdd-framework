@@ -1,4 +1,4 @@
-name: Cypress Tests
+name: Alosim e-2-e QA Automated Web AppTests
 
 on: push
 

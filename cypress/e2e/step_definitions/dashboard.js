@@ -30,6 +30,10 @@ Then("I can see all popular countries with E-Sim packages", () => {
   dashboardPage.viewCountries();
 });
 
+Then("I can see all popular countries with E-Sim packages on mobile", () => {
+  dashboardPage.viewCountriesOnMobile();
+});
+
 Then("I can view all countries with E-Sim packages", () => {
   dashboardPage.viewCountriesBelowPopular();
 });

@@ -25,6 +25,6 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 // Create a custom command
-import "cypress-mailosaur";
-require('cypress-xpath')
+// cypress/support/commands.js
+
 

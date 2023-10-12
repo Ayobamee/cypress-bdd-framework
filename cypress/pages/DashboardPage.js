@@ -91,6 +91,25 @@ class DashboardPage {
     this.elements.unitedStatesPopularBtn().should("be.visible");
   }
 
+  viewCountriesOnMobile() {
+    this.elements.austriaPopularBtn().should("be.visible");
+    this.elements.canadaPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.fijiPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.indiaPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.japanPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.kosovoPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.mexicoPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.unitedArabEmiratesPopularBtn().should("be.visible");
+    this.elements.scrollBtnonPopularSegment().click();
+    this.elements.unitedStatesPopularBtn().should("be.visible");
+  }
+
   viewCountriesBelowPopular() {
     this.elements.austriaBtn().should("be.visible");
     this.elements.canadaBtn().should("be.visible");
