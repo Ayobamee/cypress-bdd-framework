@@ -1,7 +1,7 @@
-name: Alosim e-2-e QA Automated Web AppTests
-
+name: Cypress Tests
+ 
 on: push
-
+ 
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
