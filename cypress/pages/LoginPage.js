@@ -2,7 +2,7 @@ class LoginPage {
   elements = {
     usernameInput: () => cy.get('[data-testid="EmailAddress"]'),
     passwordInput: () => cy.get('[data-testid="Password"]'),
-    loginBtn: () => cy.get(".MuiButton-contained"),
+    loginBtn: () => cy.contains("button", "Login"),
     errorMessage: () =>
       cy.contains(
         "Password must be 8 characters with at least one letter and one digit"
