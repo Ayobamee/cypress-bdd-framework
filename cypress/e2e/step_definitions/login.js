@@ -28,7 +28,7 @@ Given("I am logged into the alosim web app on {string}", (device) => {
 });
 
 Given(
-  "I am on the login screen of the alosim web app on {string}",
+  "I am on the login screen of the quales web app on {string}",
   (device) => {
     switch (device) {
       case "iOS":
@@ -54,7 +54,7 @@ Given(
   }
 );
 
-Given("A user {string} is logged in to the aloSim app", () => {
+Given("A user {string} is logged in to the quales app", () => {
   cy.fixture("testData").then((info) => {
     const testDataInfo = info.userDetails;
     cy.clearCookies();
@@ -63,7 +63,7 @@ Given("A user {string} is logged in to the aloSim app", () => {
   });
 });
 
-Given("A user is at the aloSim web app login page", () => {
+Given("A user is at the quales web app login page", () => {
   cy.clearCookies();
   cy.visit("/login");
 });
@@ -85,8 +85,8 @@ When("A user enters their incorrect credentials", () => {
   });
 });
 
-Then("The url will contain the esim subdirectory", () => {
-  cy.url().should("contains", "/esim-store/region");
+Then("The url will contain the quales subdirectory", () => {
+  cy.url().should("contains", "/courses");
 });
 Then("The appropriate error message is displayed", () => {
   loginPage.verifyLoginErrorMessage();

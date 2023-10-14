@@ -1,9 +1,12 @@
 class LoginPage {
   elements = {
-    usernameInput: () => cy.get('input[name="email"]'),
-    passwordInput: () => cy.get('input[name="password"]'),
-    loginBtn: () => cy.get('button[type="submit"]'),
-    errorMessage: () => cy.get(".sc-bkkeKt"),
+    usernameInput: () => cy.get('[data-testid="EmailAddress"]'),
+    passwordInput: () => cy.get('[data-testid="Password"]'),
+    loginBtn: () => cy.get(".MuiButton-contained"),
+    errorMessage: () =>
+      cy.contains(
+        "Password must be 8 characters with at least one letter and one digit"
+      ),
   };
 
   typeUsername(username) {
